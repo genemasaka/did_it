@@ -82,9 +82,9 @@ impl Component for ToDoApp {
 		let cb = self.link.callback(|_| Msg::MakeReq);
 		ConsoleService::info(&format!("render ToDoApp: {:?}", todos));
 		html! {
-			<div class=classes!("todo")>
+			<div class={classes!("todo")}>
 			<div>
-				<div class=classes!("refresh")>
+				<div class={classes!("refresh")}>
 					<button onclick=cb.clone()>
 					{"refresh"}
 					</button>

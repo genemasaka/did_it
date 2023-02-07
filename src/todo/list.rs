@@ -15,13 +15,13 @@ impl List {
 	fn render_list(&self, todos: &Option<Vec<ToDo>>) -> Html {
 		if let Some(t) = todos {
 			html! {
-				<div class=classes!("list")>
+				<div class={classes!("list")}>
 					{t.iter().map(|todo| self.view_todo(todo)).collect::<Html>()}
 				</div>
 			}
 		} else {
 			html! {
-				<div class=classes!("loading")>{"loading..."}</div>
+				<div class={classes!("loading")}>{"loading..."}</div>
 			}
 		}
 	}
@@ -34,7 +34,7 @@ impl List {
 		};
 
 		html! {
-			<div class=classes!("list-item", completed)>
+			<div class={classes!("list-item", completed)}>
 				<Anchor route=AppRoute::Detail(todo.id as i32)>
 					{ &todo.title }
 				</Anchor>
